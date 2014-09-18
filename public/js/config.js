@@ -15,7 +15,7 @@ app.config(
         app.value      = $provide.value;
 
         $urlRouterProvider
-            .otherwise('/app/home');
+            .otherwise('/access/signin');
         $stateProvider
             .state('app', {
                 abstract: true,

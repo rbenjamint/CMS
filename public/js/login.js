@@ -1,4 +1,4 @@
-'use strict';
+  'use strict';
 
 /* Controllers */
 app.config(['$httpProvider', function($httpProvider){
@@ -73,7 +73,7 @@ app.factory("SessionService", function() {
 });
 
 app.factory("AuthenticationService", function($http, FlashService, SessionService, CSRF_TOKEN) {
-
+  console.log('hoiu-', CSRF_TOKEN);
   var cacheSession   = function() {
     SessionService.set('authenticated', true);
   };
