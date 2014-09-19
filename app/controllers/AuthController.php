@@ -6,11 +6,11 @@ class AuthController extends BaseController {
     return Response::json(Auth::check());
   }
 
-  public function secrets() {
+  public function rest() {
     if(Auth::check()) {
-      return 'You are logged in, here are secrets.';
+      return Response::json(array('user' => Auth::user()));
     } else {
-      return 'You aint logged in, no secrets for you.';
+      return Response::json(array('error' => 'Not signed in'));
     }
   }
 

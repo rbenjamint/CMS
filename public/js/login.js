@@ -84,7 +84,6 @@ app.factory("AuthenticationService", ['$state', '$rootScope', '$http', 'FlashSer
   };
 
   var loginError = function(response) {
-    console.log('heey');
     FlashService.show(response.error);
   };
 
@@ -104,8 +103,10 @@ app.factory("AuthenticationService", ['$state', '$rootScope', '$http', 'FlashSer
         if( !response.data.user){
           console.log(response)
           $rootScope.authError = 'Email of wachtwoord is niet correct';
-        } else {
+        }
+        else {
           SessionService.set('authenticated', true);
+          $rootScope.user = response.data.user;
           $state.go('app.dashboard');
         }
       });
@@ -117,8 +118,27 @@ app.factory("AuthenticationService", ['$state', '$rootScope', '$http', 'FlashSer
       logout.success(uncacheSession);
       return logout;
     },
+    getuser: function() {
+      var user = '';
+      $http.get("/cms/auth/rest")
+            .then(function(response){
+              user = response.data.user;
+              console.log('hi', response.data.user);
+            });
+      console.log('hi', user);
+      return user;
+    },
     isLoggedIn: function() {
       return SessionService.get('authenticated');
+    },
+    getUser: function() {
+      if(SessionService.get('authenticated') == false){
+        console.log('shit');
+        return false;
+      }
+      else {
+        return $rootScope.user;
+      }
     }
   };
 }]);

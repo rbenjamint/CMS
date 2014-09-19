@@ -3,8 +3,8 @@
 /* Controllers */
 
 angular.module('app.controllers', ['pascalprecht.translate', 'ngCookies'])
-  .controller('AppCtrl', ['$scope', '$translate', '$localStorage', '$window', 'AuthenticationService', '$state', 
-    function(              $scope,   $translate,   $localStorage,   $window,   AuthenticationService,   $state ) {
+  .controller('AppCtrl', ['$http', '$scope', '$translate', '$localStorage', '$window', 'AuthenticationService', 'SessionService', '$state', '$rootScope', 
+    function(              $http,   $scope,   $translate,   $localStorage,   $window,   AuthenticationService,   SessionService, $state,   $rootScope ) {
       // add 'ie' classes to html
       var isIE = !!navigator.userAgent.match(/MSIE/i);
       isIE && angular.element($window.document.body).addClass('ie');
@@ -14,7 +14,7 @@ angular.module('app.controllers', ['pascalprecht.translate', 'ngCookies'])
       $scope.app = {
         name: 'CMS',
         nameSmall: 'RT',
-        version: '1.3.0',
+        version: '0.0.1',
         // for chart colors
         color: {
           primary: '#7266ba',
@@ -38,6 +38,7 @@ angular.module('app.controllers', ['pascalprecht.translate', 'ngCookies'])
           container: false
         }
       }
+
       // set title of the page
       document.title = $scope.app.name;
       // save settings to local storage
@@ -67,6 +68,11 @@ angular.module('app.controllers', ['pascalprecht.translate', 'ngCookies'])
         $scope.lang.isopen = !$scope.lang.isopen;
       };
 
+      $http.get("/cms/auth/rest")
+            .then(function(response){
+              $scope.user = response.data.user;
+            });
+
       $scope.logout = function() {
         AuthenticationService.logout().success(function() {
           $state.go('access.signin');
@@ -85,36 +91,20 @@ angular.module('app.controllers', ['pascalprecht.translate', 'ngCookies'])
 
   // signin controller
   .controller('SigninFormController', ['$scope', '$http', '$state', 'AuthenticationService', function($scope, $http, $state, AuthenticationService) {
-    console.log('state vanuit controller: ', $state);
     $scope.credentials = { email: '', password: '' };
 
     $scope.login = function() {
       $scope.credentials = { email: $scope.user.email, password: $scope.user.password };
-      //console.log( 'hi', AuthenticationService.login($scope.credentials));
       var login = AuthenticationService.login($scope.credentials);
     };
   }])
 
-  // signup controller
-  .controller('SignupFormController', ['$scope', '$http', '$state', function($scope, $http, $state) {
-    $scope.user = {};
-    $scope.authError = null;
-    $scope.signup = function() {
-      $scope.authError = null;
-      // Try to create
-      $http.post('api/signup', {name: $scope.user.name, email: $scope.user.email, password: $scope.user.password})
-      .then(function(response) {
-        if ( !response.data.user ) {
-          $scope.authError = response;
-        }else{
-          $state.go('app.dashboard');
-        }
-      }, function(x) {
-        $scope.authError = 'Server Error';
-      });
-    };
+  .controller('HomeController', ['$scope', '$rootScope', function($scope, $rootScope, CRSF_TOKEN) {
+    console.log('hi', $rootScope);
   }])
 
-  .controller('HomeController', ['$scope', function($scope, CRSF_TOKEN) {
+  // Pages Controller
+  .controller('PagesCtrl', ['$scope', function($scope) {
+    console.log('pages');
   }])
 ;

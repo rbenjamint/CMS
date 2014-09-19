@@ -47,6 +47,10 @@ app.config(
             .state('access.404', {
                 url: '/404',
                 templateUrl: 'tpl/page_404.html'
+            })
+            .state('app.pages', {
+                url: '/pages',
+                templateUrl: 'tpl/cms_pages.html'
             });
 
     }
