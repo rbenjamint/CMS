@@ -16,20 +16,23 @@
 })->where( 'all', '.*' );
 */
 
-Route::get('/error{code}', array('as' => 'error.404', 'uses' => 'PageController@error'));
-
-Route::any( '{all}', 'PageController@page')->where( 'all', '.*' );
-
-
 Route::group(array('prefix' => 'cms'), function(){
 
   Route::any( '/', function() {
     return View::make( 'cms.main' );
   });
 
-  Route::post('/auth/login', array('before' => 'csrf_json', 'uses' => 'AuthController@login'));
-  Route::get('/auth/logout', 'AuthController@logout');
-  Route::get('/auth/status', 'AuthController@status');
-  Route::get('/auth/rest','AuthController@rest');
+  Route::post('auth/login', array('before' => 'csrf_json', 'uses' => 'AuthController@login'));
+  Route::get('auth/logout', 'AuthController@logout');
+  Route::get('auth/status', 'AuthController@status');
+  Route::get('auth/rest','AuthController@rest');
 
+  Route::group(array('prefix' => 'api'), function(){
+    Route::get('pages/rest','PageController@rest');
+  });
 });
+
+Route::get('/error{code}', array('as' => 'error.404', 'uses' => 'PageController@error'));
+
+Route::any( '{all}', 'PageController@page')->where( 'all', '.*' );
+

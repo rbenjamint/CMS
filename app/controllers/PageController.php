@@ -19,5 +19,10 @@ class PageController extends BaseController {
                 ->with('errorcode', $id);
   }
 
+  public function rest() {
+    $pages = Page::all();
+    return Response::json($pages);
+  }
+
 
 }

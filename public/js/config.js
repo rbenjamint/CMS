@@ -51,6 +51,10 @@ app.config(
             .state('app.pages', {
                 url: '/pages',
                 templateUrl: 'tpl/cms_pages.html'
+            })
+            .state('app/pages/edit', {
+                url: '/{id:[0-9]{1,4}}',
+                templateUrl: 'tpl/cms_pages_edit.html'
             });
 
     }

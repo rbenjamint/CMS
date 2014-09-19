@@ -130,15 +130,6 @@ app.factory("AuthenticationService", ['$state', '$rootScope', '$http', 'FlashSer
     },
     isLoggedIn: function() {
       return SessionService.get('authenticated');
-    },
-    getUser: function() {
-      if(SessionService.get('authenticated') == false){
-        console.log('shit');
-        return false;
-      }
-      else {
-        return $rootScope.user;
-      }
     }
   };
 }]);

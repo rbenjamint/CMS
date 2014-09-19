@@ -13,6 +13,7 @@ class PagesTableSeeder extends Seeder {
                 'url'           => '/',
                 'text'          => 'Homepagina!',
                 'nav'           => 1,
+                'active'        => 1,
                 'created_at'    => new DateTime,
                 'updated_at'    => new DateTime
             ),
@@ -22,6 +23,7 @@ class PagesTableSeeder extends Seeder {
                 'url'           => 'info',
                 'text'          => 'Informatie!',
                 'nav'           => 1,
+                'active'        => 1,
                 'created_at'    => new DateTime,
                 'updated_at'    => new DateTime
             ),
@@ -31,6 +33,7 @@ class PagesTableSeeder extends Seeder {
                 'url'           => 'contact',
                 'text'          => 'Contact!',
                 'nav'           => 1,
+                'active'        => 1,
                 'created_at'    => new DateTime,
                 'updated_at'    => new DateTime
             ),
@@ -40,6 +43,7 @@ class PagesTableSeeder extends Seeder {
                 'url'           => 'hallo',
                 'text'          => 'Hallo wereld!',
                 'nav'           => 0,
+                'active'        => 1,
                 'created_at'    => new DateTime,
                 'updated_at'    => new DateTime
             )

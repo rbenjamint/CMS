@@ -20,6 +20,7 @@ class CreatePagesTable extends Migration {
 			$table->string('url');
 			$table->longText('text');
 			$table->integer('nav');
+			$table->integer('active');
 			$table->timestamps();
 		});
 	}

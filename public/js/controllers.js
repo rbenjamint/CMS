@@ -104,7 +104,17 @@ angular.module('app.controllers', ['pascalprecht.translate', 'ngCookies'])
   }])
 
   // Pages Controller
-  .controller('PagesCtrl', ['$scope', function($scope) {
-    console.log('pages');
+  .controller('PagesCtrl', ['$scope', '$http',
+                    function($scope,   $http) {
+    $http.get("/cms/api/pages/rest")
+          .then(function(response){
+            $scope.pages = response.data;
+          });
+  }])
+
+  // Pages edit Controller
+  .controller('PageEditCtrl', ['$scope', '$http', '$stateParams',
+    function(                   $scope,   $http,   $stateParams) {
+      console.log($stateParams);
   }])
 ;
