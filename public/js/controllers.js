@@ -116,6 +116,5 @@ angular.module('app.controllers', ['pascalprecht.translate', 'ngCookies'])
   }])
 
   .controller('HomeController', ['$scope', function($scope, CRSF_TOKEN) {
-    console.log('hoi', CRSF_TOKEN);
   }])
 ;
