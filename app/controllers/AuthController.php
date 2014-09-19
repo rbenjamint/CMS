@@ -16,11 +16,13 @@ class AuthController extends BaseController {
 
   public function login()
   {
+    //return Response::json(Input::all());
+    //return Response::json(array('flash' => 'hooi', 'email' => Input::json('email'), 'password' => Input::json('password')));
     if(Auth::attempt(array('email' => Input::json('email'), 'password' => Input::json('password'))))
     {
-      return Response::json(Auth::user());
+      return Response::json(array('user' => Auth::user()));
     } else {
-      return Response::json(array('flash' => 'Invalid username or password'), 500);
+      return Response::json(array('error' => 'Invalid username or password', 'data' => Input::all()));
     }
   }
 

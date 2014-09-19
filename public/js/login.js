@@ -9,7 +9,7 @@ app.config(['$httpProvider', function($httpProvider){
       return response;
     };
 
-    var error = function(){
+    var error = function() {
       if(response.status === 401) {
         SessionService.unset('authenticated');
         $location.path('/negerneukendehoer');
@@ -72,8 +72,9 @@ app.factory("SessionService", function() {
   }
 });
 
-app.factory("AuthenticationService", function($http, FlashService, SessionService, CSRF_TOKEN) {
-  console.log('hoiu-', CSRF_TOKEN);
+app.factory("AuthenticationService", ['$state', '$rootScope', '$http', 'FlashService', 'SessionService', 'CSRF_TOKEN',
+                              function($state,   $rootScope,   $http,   FlashService,   SessionService,   CSRF_TOKEN) {
+
   var cacheSession   = function() {
     SessionService.set('authenticated', true);
   };
@@ -83,36 +84,41 @@ app.factory("AuthenticationService", function($http, FlashService, SessionServic
   };
 
   var loginError = function(response) {
-    FlashService.show(response.flash);
+    console.log('heey');
+    FlashService.show(response.error);
   };
 
   var sanitizeCredentials = function(credentials) {
     return {
-      email: $sanitize(credentials.email),
-      password: $sanitize(credentials.password),
+      email: credentials.email,
+      password: credentials.password,
       csrf_token: CSRF_TOKEN
     };
   };
 
   return {
     login: function(credentials) {
-      console.log('trying to login.');
-      var login = $http.post("/auth/login", credentials);
-      login.success(cacheSession);
-      login.success(FlashService.clear);
-      login.error(loginError);
-      return login;
+
+      var login = $http.post("/cms/auth/login", sanitizeCredentials(credentials))
+      .then(function(response){
+        if( !response.data.user){
+          console.log(response)
+          $rootScope.authError = 'Email of wachtwoord is niet correct';
+        } else {
+          SessionService.set('authenticated', true);
+          $state.go('app.dashboard');
+        }
+      });
+      return;
     },
     logout: function() {
       console.log('trying to logout.');
-      var logout = $http.get("/auth/logout");
+      var logout = $http.get("/cms/auth/logout");
       logout.success(uncacheSession);
       return logout;
     },
     isLoggedIn: function() {
-      console.log('getting the current state.', SessionService.get('authenticated'));
-      return false;
       return SessionService.get('authenticated');
     }
   };
-});
+}]);

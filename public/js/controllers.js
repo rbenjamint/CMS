@@ -3,8 +3,8 @@
 /* Controllers */
 
 angular.module('app.controllers', ['pascalprecht.translate', 'ngCookies'])
-  .controller('AppCtrl', ['$scope', '$translate', '$localStorage', '$window', 
-    function(              $scope,   $translate,   $localStorage,   $window ) {
+  .controller('AppCtrl', ['$scope', '$translate', '$localStorage', '$window', 'AuthenticationService', '$state', 
+    function(              $scope,   $translate,   $localStorage,   $window,   AuthenticationService,   $state ) {
       // add 'ie' classes to html
       var isIE = !!navigator.userAgent.match(/MSIE/i);
       isIE && angular.element($window.document.body).addClass('ie');
@@ -12,7 +12,7 @@ angular.module('app.controllers', ['pascalprecht.translate', 'ngCookies'])
 
       // config
       $scope.app = {
-        name: 'Robin CMS',
+        name: 'CMS',
         nameSmall: 'RT',
         version: '1.3.0',
         // for chart colors
@@ -38,7 +38,8 @@ angular.module('app.controllers', ['pascalprecht.translate', 'ngCookies'])
           container: false
         }
       }
-
+      // set title of the page
+      document.title = $scope.app.name;
       // save settings to local storage
       if ( angular.isDefined($localStorage.settings) ) {
         $scope.app.settings = $localStorage.settings;
@@ -66,6 +67,12 @@ angular.module('app.controllers', ['pascalprecht.translate', 'ngCookies'])
         $scope.lang.isopen = !$scope.lang.isopen;
       };
 
+      $scope.logout = function() {
+        AuthenticationService.logout().success(function() {
+          $state.go('access.signin');
+        });
+      };
+
       function isSmartDevice( $window )
       {
           // Adapted from http://www.detectmobilebrowsers.com
@@ -78,13 +85,13 @@ angular.module('app.controllers', ['pascalprecht.translate', 'ngCookies'])
 
   // signin controller
   .controller('SigninFormController', ['$scope', '$http', '$state', 'AuthenticationService', function($scope, $http, $state, AuthenticationService) {
-
-    $scope.credentials = { email: "", password: "" };
+    console.log('state vanuit controller: ', $state);
+    $scope.credentials = { email: '', password: '' };
 
     $scope.login = function() {
-      AuthenticationService.login($scope.credentials).success(function() {
-        $location.path('/home');
-      });
+      $scope.credentials = { email: $scope.user.email, password: $scope.user.password };
+      //console.log( 'hi', AuthenticationService.login($scope.credentials));
+      var login = AuthenticationService.login($scope.credentials);
     };
   }])
 

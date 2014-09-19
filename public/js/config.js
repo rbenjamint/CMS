@@ -31,6 +31,11 @@ app.config(
                 templateUrl: 'tpl/app_home.html',
                 controller: 'HomeController'
             })
+            .state('app.contact', {
+                url: '/contact',
+                templateUrl: 'tpl/app_contact.html',
+                controller: 'HomeController'
+            })
             .state('access', {
                 url: '/access',
                 template: '<div ui-view class="fade-in-right-big smooth"></div>'
@@ -38,14 +43,6 @@ app.config(
             .state('access.signin', {
                 url: '/signin',
                 templateUrl: 'tpl/page_signin.html'
-            })
-            .state('access.signup', {
-                url: '/signup',
-                templateUrl: 'tpl/page_signup.html'
-            })
-            .state('access.forgotpwd', {
-                url: '/forgotpwd',
-                templateUrl: 'tpl/page_forgotpwd.html'
             })
             .state('access.404', {
                 url: '/404',
