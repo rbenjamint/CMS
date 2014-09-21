@@ -16,8 +16,6 @@ class AuthController extends BaseController {
 
   public function login()
   {
-    //return Response::json(Input::all());
-    //return Response::json(array('flash' => 'hooi', 'email' => Input::json('email'), 'password' => Input::json('password')));
     if(Auth::attempt(array('email' => Input::json('email'), 'password' => Input::json('password'))))
     {
       return Response::json(array('user' => Auth::user()));

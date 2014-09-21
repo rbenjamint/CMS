@@ -19,8 +19,53 @@
       </div>
     </div>
     @include('layout.blocks.nav')
-    <div class="padder">
-      {{ $page->text }}
-    </div>
-  </div>
+	<div class="wrapper-md">
+		<div class="col-sm-9">
+			<div class="blog-post">                   
+	        <div class="panel">
+	          <div class="wrapper">
+	            <div>
+						<p>
+	      				{{ $page->text }}
+	      			</p>
+	            </div>
+	            <div class="line line-lg b-b b-light"></div>
+	            <div class="text-muted">
+	              <i class="fa fa-user text-muted"></i> by <a href class="m-r-sm">Admin</a>
+	              <i class="fa fa-clock-o text-muted"></i> Sep 21, 2014
+	            </div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>
+	    <div class="col-sm-3">
+	      <h5 class="font-bold">Categories</h5>
+	      <ul class="list-group">
+	        <li class="list-group-item">
+	          <a href>
+	            <span class="badge pull-right">15</span>
+	            Photograph
+	          </a>
+	        </li>
+	        <li class="list-group-item">
+	          <a href>
+	            <span class="badge pull-right">30</span>
+	            Life style
+	          </a>
+	        </li>
+	        <li class="list-group-item">
+	          <a href>
+	            <span class="badge pull-right">9</span>
+	            Food
+	          </a>
+	        </li>
+	        <li class="list-group-item">
+	          <a href>
+	            <span class="badge pull-right">4</span>
+	            Travel world
+	          </a>
+	        </li>
+	      </ul>
+		</div>
+	</div>
 </div>

@@ -3,12 +3,16 @@
 
         @foreach (Page::where('nav', '=', 1)->get() as $item)
           {{-- expr --}}
-          @if($page->url == $item->url)
+          @if($page->route == $item->route)
             <li class="active"> 
           @else
             <li>
           @endif
-            <a href="{{$item->url}}">{{ $item->title }}</a>
+       		@if( $item->route[0] === '/')
+            	<a href="{{$item->route}}">{{ $item->title }}</a>
+            @else
+            	<a href="/{{$item->route}}">{{ $item->title }}</a>
+            @endif
           </li>
         @endforeach
       </ul>

@@ -7,6 +7,8 @@ class Page extends Eloquent {
      *
      * @var string
      */
-    protected $table = 'pages';
+	protected $table = 'pages';
+	
+	protected $fillable = array('title', 'name', 'route', 'active', 'nav', 'text');
 
 }

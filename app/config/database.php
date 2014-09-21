@@ -55,9 +55,9 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'robin-cms',
-			'username'  => 'root',
-			'password'  => 'root',
+			'database'  => 'admin_cms',
+			'username'  => 'admin_cms',
+			'password'  => 'B32jHYFpHc',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',

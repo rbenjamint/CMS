@@ -17,10 +17,10 @@ class CreatePagesTable extends Migration {
 			$table->increments('id');
 			$table->string('title');
 			$table->string('name');
-			$table->string('url');
+			$table->string('route');
 			$table->longText('text');
-			$table->integer('nav');
-			$table->integer('active');
+			$table->boolean('nav');
+			$table->boolean('active');
 			$table->timestamps();
 		});
 	}

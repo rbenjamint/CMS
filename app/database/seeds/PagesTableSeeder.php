@@ -10,40 +10,40 @@ class PagesTableSeeder extends Seeder {
             array(
                 'title'         => 'Home',
                 'name'         => 'Home',
-                'url'           => '/',
+                'route'	        => '/',
                 'text'          => 'Homepagina!',
-                'nav'           => 1,
-                'active'        => 1,
+                'nav'           => true,
+                'active'        => true,
                 'created_at'    => new DateTime,
                 'updated_at'    => new DateTime
             ),
             array(
                 'title'         => 'Informatie',
                 'name'         => 'Informatie',
-                'url'           => 'info',
+                'route'           => 'info',
                 'text'          => 'Informatie!',
-                'nav'           => 1,
-                'active'        => 1,
+                'nav'           => true,
+                'active'        => true,
                 'created_at'    => new DateTime,
                 'updated_at'    => new DateTime
             ),
             array(
                 'title'         => 'Contact',
                 'name'         => 'Contact',
-                'url'           => 'contact',
+                'route'         => 'contact',
                 'text'          => 'Contact!',
-                'nav'           => 1,
-                'active'        => 1,
+                'nav'           => true,
+                'active'        => true,
                 'created_at'    => new DateTime,
                 'updated_at'    => new DateTime
             ),
             array(
                 'title'         => 'Hallo Wereld',
                 'name'         => 'Hallo Wereld',
-                'url'           => 'hallo',
+                'route'         => 'hallo',
                 'text'          => 'Hallo wereld!',
-                'nav'           => 0,
-                'active'        => 1,
+                'nav'           => false,
+                'active'        => true,
                 'created_at'    => new DateTime,
                 'updated_at'    => new DateTime
             )

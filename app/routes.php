@@ -28,7 +28,18 @@ Route::group(array('prefix' => 'cms'), function(){
   Route::get('auth/rest','AuthController@rest');
 
   Route::group(array('prefix' => 'api'), function(){
-    Route::get('pages/rest','PageController@rest');
+  	
+		// pages api
+		Route::group(array('prefix' => 'pages'), function(){
+			Route::get('rest','PageController@rest');
+			Route::get('rest/{id}','PageController@restId')->where('id', '[0-9]+');
+			Route::get('rest/{key}/{value}','PageController@restWhere');
+			
+			Route::post('rest/{id}','PageController@restIdPost')->where('id', '[0-9]+');
+			
+			Route::post('save','PageController@save');
+			Route::post('create','PageController@create');
+		});
   });
 });
 
