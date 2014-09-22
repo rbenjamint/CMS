@@ -78,7 +78,14 @@ angular.module('app.controllers', ['pascalprecht.translate', 'ngCookies'])
           $state.go('access.signin');
         });
       };
-
+		$scope.goto = function(url) {
+			if(url[0] === '/'){
+				window.location = url;
+			} else {
+				console.log('/'+url);
+				window.location = '/'+url;
+			}
+		};
       function isSmartDevice( $window )
       {
           // Adapted from http://www.detectmobilebrowsers.com
@@ -104,17 +111,47 @@ angular.module('app.controllers', ['pascalprecht.translate', 'ngCookies'])
   }])
 
   // Pages Controller
-  .controller('PagesCtrl', ['$scope', '$http',
-                    function($scope,   $http) {
-    $http.get("/cms/api/pages/rest")
-          .then(function(response){
-            $scope.pages = response.data;
-          });
+  .controller('PagesCtrl', ['$scope', '$stateParams', 'pages',
+                    function($scope,   $stateParams,	 pages) {
+	  pages.all().then(function(pages){
+	    $scope.pages = pages;
+		console.log('Pages: ',pages);
+	  });
+  }])
+  .controller('PagesActiveCtrl', ['$scope', '$stateParams', 'pages',
+                    function($scope,   $stateParams,	 pages) {
+	  pages.where('nav', 1).then(function(pages){
+	    $scope.pages = pages;
+		console.log('Pages: ',pages);
+	  });
   }])
 
   // Pages edit Controller
-  .controller('PageEditCtrl', ['$scope', '$http', '$stateParams',
-    function(                   $scope,   $http,   $stateParams) {
-      console.log($stateParams);
+  .controller('PageEditCtrl', ['$state', '$scope', '$http', '$stateParams', 'pages',
+    function(                   $state, 	$scope,   $http,   $stateParams,	 pages) {
+    	
+    	pages.get($stateParams.pageId).then(function(page){
+    		$scope.page = page;
+    		$scope.page.nav = Boolean($scope.page.nav);
+    		$scope.page.active = Boolean($scope.page.active);
+    	});
+    	$scope.submit = function(){
+    		pages.save($scope.page).then(function(page){
+    			$state.go('app.pages.all');
+    			$scope.page = page;
+    		});
+    	};
+  }])
+  // Pages create Controller
+  .controller('PageCreateCtrl', ['$state', '$scope', '$http', '$stateParams', 'pages',
+    function(                   	 $state, $scope,   $http,   $stateParams,	 pages) {
+    	$scope.page = { title: 'Pagina titel'}
+    	
+    	$scope.submit = function(){
+    		pages.create($scope.page).then(function(page){
+    			$state.go('app.pages.all');
+    			$scope.page = page;
+    		});
+    	};
   }])
 ;

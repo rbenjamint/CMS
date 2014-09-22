@@ -31,6 +31,7 @@ Route::group(array('prefix' => 'cms'), function(){
   	
 		// pages api
 		Route::group(array('prefix' => 'pages'), function(){
+
 			Route::get('rest','PageController@rest');
 			Route::get('rest/{id}','PageController@restId')->where('id', '[0-9]+');
 			Route::get('rest/{key}/{value}','PageController@restWhere');
@@ -40,6 +41,14 @@ Route::group(array('prefix' => 'cms'), function(){
 			Route::post('save','PageController@save');
 			Route::post('create','PageController@create');
 		});
+    // blocks
+  
+    Route::group(array('prefix' => 'blocks'), function(){
+      
+      Route::get('rest','BlocksController@rest');
+      Route::get('pbrest','BlocksController@pbrest');
+
+    });
   });
 });
 

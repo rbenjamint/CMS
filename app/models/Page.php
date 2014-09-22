@@ -11,4 +11,7 @@ class Page extends Eloquent {
 	
 	protected $fillable = array('title', 'name', 'route', 'active', 'nav', 'text');
 
+  public function blocks() {
+      return $this->hasMany('PageBlock');
+  }
 }

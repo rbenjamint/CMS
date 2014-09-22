@@ -15,7 +15,7 @@ app.config(
         app.value      = $provide.value;
 
         $urlRouterProvider
-            .otherwise('/access/signin');
+            .otherwise('/app/dashboard');
         $stateProvider
             .state('app', {
                 abstract: true,
@@ -25,16 +25,6 @@ app.config(
             .state('app.dashboard', {
                 url: '/dashboard',
                 templateUrl: 'tpl/app_dashboard_v1.html'
-            })
-            .state('app.home', {
-                url: '/home',
-                templateUrl: 'tpl/app_home.html',
-                controller: 'HomeController'
-            })
-            .state('app.contact', {
-                url: '/contact',
-                templateUrl: 'tpl/app_contact.html',
-                controller: 'HomeController'
             })
             .state('access', {
                 url: '/access',
@@ -49,13 +39,35 @@ app.config(
                 templateUrl: 'tpl/page_404.html'
             })
             .state('app.pages', {
+                abstract: true,
                 url: '/pages',
+                templateUrl: 'tpl/pages.html',
+                resolve: {
+                    deps: ['uiLoad',
+                      function( uiLoad ){
+                        return uiLoad.load( ['/js/services/pages.js'] );
+                    }]
+                }
+            })
+            .state('app.pages.all', {
+                url: '/all/',
                 templateUrl: 'tpl/cms_pages.html'
             })
-            .state('app/pages/edit', {
-                url: '/{id:[0-9]{1,4}}',
-                templateUrl: 'tpl/cms_pages_edit.html'
-            });
+            .state('app.pages.active', {
+                url: '/active/',
+                templateUrl: 'tpl/cms_pages_active.html'
+            })
+            .state('app.pages.edit', {
+                url: '/{pageId:[0-9]{1,4}}',
+                templateUrl: 'tpl/cms_pages_edit.html',
+                controller: 'PageEditCtrl'
+            })
+            .state('app.pages.create', {
+                url: '/create',
+                templateUrl: 'tpl/cms_pages_edit.html',
+                controller: 'PageCreateCtrl'
+            })
+          	;
 
     }
   ]

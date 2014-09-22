@@ -1,5 +1,5 @@
 <div class="bg-light lter b-b wrapper-md">
-  <h1 class="m-n font-thin h3">Pages</h1>
+  <h1 class="m-n font-thin h3">Pagina's</h1>
 </div>
 <div class="wrapper-md" ng-controller="PagesCtrl">
   <div class="panel panel-default">
@@ -17,23 +17,23 @@
                   Titel
               </th>
               <th>
-                  url
-              </th>
-              <th data-hide="phone,tablet">
-                  Zichtbaar in navigatie
-              </th>
-              <th data-hide="phone,tablet" data-name="Date Of Birth">
-                  Tekst
+                  Route
               </th>
               <th data-hide="phone">
+                  Navigatie
+              </th>
+              <th data-hide="phone">
+                  Tekst
+              </th>
+              <th>
                   Status
               </th>
           </tr>
         </thead>
         <tbody>
-          <tr ng-repeat="page in pages">
-            <td><a ui-sref="app.pages.edi">{{ page.title }}</a></td>
-            <td>{{ page.url }}</td>
+          <tr ng-repeat="page in pages | filter:nav:1">
+            <td><a ui-sref="app.pages.edit({pageId:page.id})">{{ page.title }}</a></td>
+            <td>{{ page.route }}</td>
             <td>{{ page.nav }}</td>
             <td data-value="78025368997">{{ page.text }}</td>
             <td data-value="1">
