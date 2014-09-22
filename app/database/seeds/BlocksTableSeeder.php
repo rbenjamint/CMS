@@ -9,12 +9,12 @@ class BlocksTableSeeder extends Seeder {
         $blocks = array(
             array(
                 'name'          => 'post',
-                'template'      => 'blocks/templates/html',
+                'template'      => 'post',
                 'settings'      => 1
             ),
             array(
                 'name'          => 'page',
-                'template'      => 'blocks/templates/page.html',
+                'template'      => 'page',
                 'settings'      => 0
             )
         );

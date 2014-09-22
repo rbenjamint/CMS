@@ -46,7 +46,7 @@
 				:::
 				<p>{{ json_encode($block) }}</p>
 				---
-				<p>{{ json_encode($block->hoi) }}</p>
+				@include('site.blocks.'.$block->hoi->template)
 			@endforeach
 			{{-- expr --}}
 		@endforeach
