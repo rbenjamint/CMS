@@ -52,7 +52,13 @@ Route::group(array('prefix' => 'cms'), function(){
   });
 });
 
-Route::get('/error{code}', array('as' => 'error.404', 'uses' => 'PageController@error'));
+Route::group(array('prefix' => 'test'), function(){
+	Route::any( '{all}', 'PageController@page2')
+			->where( 'all', '.*' );
+	Route::any( '/{all}', 'PageController@page2')
+			->where( 'all', '.*' );
+});
+Route::get('/error', array('as' => '404', 'uses' => 'PageController@error'));
 
-Route::any( '{all}', 'PageController@page')->where( 'all', '.*' );
 
+Route::any( '{all}', 'PageController@page2')->where( 'all', '.*' );

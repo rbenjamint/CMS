@@ -15,6 +15,8 @@ class DatabaseSeeder extends Seeder {
 		$this->call('PagesTableSeeder');
 		$this->call('BlocksTableSeeder');
 		$this->call('PageBlocksTableSeeder');
+		$this->call('TemplateTableSeeder');
+		$this->call('TemplateConfigTableSeeder');
 	}
 
 }

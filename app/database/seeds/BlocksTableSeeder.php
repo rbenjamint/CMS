@@ -8,14 +8,25 @@ class BlocksTableSeeder extends Seeder {
 
         $blocks = array(
             array(
-                'name'          => 'post',
-                'template'      => 'post',
-                'settings'      => 1
+                'id'        	  => 1,
+                'name'          => 'header',
+                'template'      => 'header',
+                'settings'      => 1,
+                'locked'        => 0
             ),
             array(
-                'name'          => 'page',
-                'template'      => 'page',
-                'settings'      => 0
+                'id'        	  => 2,
+                'name'          => 'jumbotron',
+                'template'      => 'jumbotron',
+                'settings'      => 1,
+                'locked'        => 0
+            ),
+            array(
+                'id'        	  => 3,
+                'name'          => 'navigatie',
+                'template'      => 'nav',
+                'settings'      => 1,
+                'locked'        => 0
             )
         );
 

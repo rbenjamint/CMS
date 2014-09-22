@@ -12,6 +12,9 @@ class Page extends Eloquent {
 	protected $fillable = array('title', 'name', 'route', 'active', 'nav', 'text');
 
   public function blocks() {
-      return $this->hasMany('PageBlock');
+      return $this->hasMany('PageBlock')->orderBy('order');
+  }
+  public function template() {
+      return $this->belongsTo('TemplateConfig', 'template_config_id');
   }
 }

@@ -17,6 +17,7 @@ class CreatePageBlocksTable extends Migration {
 			$table->increments('id');
 			$table->integer('page_id');
 			$table->integer('blocks_id');
+			$table->integer('order');
 			$table->longText('settings');
 		});
 	}

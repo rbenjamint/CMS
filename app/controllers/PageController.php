@@ -9,16 +9,32 @@ class PageController extends BaseController {
     if($page->count() != 0){
       $page = $page->first();
       //return Response::json($page);
+      
       return View::make('layout.html5')
                   ->with('page', $page);
     } else {
-      return Redirect::to('/error404');
+      return Redirect::route('404');
     }
   }
+  public function page2($route) {
+  	//return Response::json($route);
+    $page = Page::where('route', '=', $route)->get();
+    if($page->count() != 0){
+      $page = $page->first();
+		//var_dump($page->blocks());
+		 //return Response::json($page);
+		 
+	    return View::make('site.template')
+	    					->with('page', $page);
+	 } else {
+  		return Response::json('fout');
+      //return Redirect::to_route('404');
+    }
+  }
+  
 
-  public function error($id) {
-    return View::make('layout.404')
-                ->with('errorcode', $id);
+  public function error() {
+    return View::make('layout.404');
   }
 
   public function rest() {

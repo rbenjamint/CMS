@@ -21,6 +21,7 @@ class CreatePagesTable extends Migration {
 			$table->longText('text');
 			$table->boolean('nav');
 			$table->boolean('active');
+			$table->integer('template_config_id');
 			$table->timestamps();
 		});
 	}

@@ -10,12 +10,20 @@ class PageBlocksTableSeeder extends Seeder {
             array(
                 'page_id'       => 1,
                 'blocks_id'     => 1,
-                'settings'      => "{'text':'hallo'}"
+                'order'		     => 1,
+                'settings'      => '{"text":"hallo"}'
             ),
             array(
                 'page_id'       => 1,
                 'blocks_id'     => 2,
-                'settings'      => "{'text':'hallo'}"
+                'order'			  => 2,
+                'settings'      => '{"text":"hallo"}'
+            ),
+            array(
+                'page_id'       => 1,
+                'blocks_id'     => 3,
+                'order'			  => 3,
+                'settings'      => '{"text":"hallo"}'
             )
         );
 

@@ -9,9 +9,9 @@ class PageBlock extends Eloquent {
      */
 	protected $table = 'page_blocks';
 	
-	protected $fillable = array('page_id', 'blocks_id', 'settings');
+	protected $fillable = array('page_id', 'blocks_id', 'order', 'settings');
   
-  public function hoi() {
+  public function getBlock() {
       return $this->belongsTo('Block', 'blocks_id');
   }
 }
