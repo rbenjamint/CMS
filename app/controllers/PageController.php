@@ -21,6 +21,7 @@ class PageController extends BaseController {
     $page = Page::where('route', '=', $route)->get();
     if($page->count() != 0){
       $page = $page->first();
+      $page = $this->cleanPage($page);
 		//var_dump($page->blocks());
 		 //return Response::json($page);
 		 
@@ -85,7 +86,7 @@ class PageController extends BaseController {
   
 	private function getPage($id) {
 		$page = Page::find($id);
-		$page = $this->resolvePage($page);
+		$page = $this->cleanPage($page);
 		return $page;
 	}
 	private function resolvePage($page){

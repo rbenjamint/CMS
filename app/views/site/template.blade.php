@@ -16,23 +16,21 @@
 </head>
 <body>
 	<div class="app">
-	<? $file = isset($page->template->template->file); ?>
 	@if( isset($page->template) )
-		<? if(isset($page->template->settings)){
-				$templateSettings = json_decode($page->template->settings);
-			}
-		?>
+    <? $settings = $page->template->settings; ?>
 		@include('site.templates.'.$page->template->template->file)
 	@else
-	
+	<div class="hbox hbox-auto-xs hbox-auto-sm" ng-init="
+    app.settings.asideFolded = false; 
+    app.settings.asideDock = false;
+  ">
+
 		@if(sizeof($page->blocks) != 0)
 			@foreach ($page->blocks as $pageblock)
-				<? if(isset($pageblock->settings)){
-						$settings = json_decode($pageblock->settings);
-					}
-				?>
-				
-				@include('site.blocks.'.$pageblock->getBlock->template)
+			<? if(isset($pageblock->settings)){
+						$settings = $pageblock->settings;
+					} ?>
+				@include('site.blocks.'.$pageblock->block->template)
 				
 			@endforeach
 		@else
@@ -40,6 +38,7 @@
 				Geen blokken.
 			</div>
 		@endif
+  </div>
 		
 	@endif
 	</div>

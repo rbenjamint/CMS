@@ -3,7 +3,7 @@
       <div class="navbar-header">
         <!-- brand -->
         <a href="/" class="navbar-brand text-lt">
-          <span class="hidden-folded">{{$templateSettings->text}}</span>
+          <span class="hidden-folded">{{ $settings->text }}</span>
         </a>
         <!-- / brand -->
       </div>
@@ -14,11 +14,11 @@
 	@if(sizeof($page->blocks) != 0)
 		@foreach ($page->blocks as $pageblock)
 			<? if(isset($pageblock->settings)){
-					$settings = json_decode($pageblock->settings);
+					$settings = $pageblock->settings;
 				}
 			?>
 			
-			@include('site.blocks.'.$pageblock->getBlock->template)
+			@include('site.blocks.'.$pageblock->block->template)
 			
 		@endforeach
 	@else

@@ -1,0 +1,7 @@
+.center {
+  top: 50%;
+  left: 50%;
+  position: relative;
+  display: inline-block;
+  @include transform(translateX(-50%) translateY(-50%));
+}

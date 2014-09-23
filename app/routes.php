@@ -47,6 +47,7 @@ Route::group(array('prefix' => 'cms'), function(){
       
       Route::get('rest','BlocksController@rest');
       Route::get('pbrest','BlocksController@pbrest');
+      Route::get('pbrest/{id}','BlocksController@pbrestId')->where('id', '[0-9]+');
 
     });
   });

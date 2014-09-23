@@ -9,7 +9,7 @@ class TemplateConfig extends Eloquent {
      */
 	protected $table = 'template_config';
 	
-	public function template() {
-		return $this->belongsTo('Template', 'template_id');
-	}
+  public function template() {
+    return $this->belongsTo('Template', 'template_id');
+  }
 }

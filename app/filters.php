@@ -40,6 +40,18 @@ Route::filter('auth', function()
   }
 });
 
+Route::filter('auth_admin', function()
+{
+    if (Auth::guest())
+      return Response::json(array('flash' => 'Please log in.'), 401);
+
+    $email = Auth::user()->email;
+    $user  = User::where('email','=',$email)->first();
+
+    if($user['roles_id'] > 3) {
+        return Redirect::to('/admin');
+    }
+});
 
 Route::filter('auth.basic', function()
 {

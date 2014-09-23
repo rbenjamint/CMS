@@ -11,7 +11,7 @@ class PageBlock extends Eloquent {
 	
 	protected $fillable = array('page_id', 'blocks_id', 'order', 'settings');
   
-  public function getBlock() {
+  public function block() {
       return $this->belongsTo('Block', 'blocks_id');
   }
 }
