@@ -1,0 +1,61 @@
+<div class="bg-light lter b-b wrapper-md">
+  <h1 class="m-n font-thin h3">Bewerk pagina</h1>
+</div>
+<div class="wrapper-md">
+  <div class="panel panel-default">
+	  <form name="form-contact" class="form-validation">
+	    <div class="panel-default">
+	      <div class="panel-heading">
+				<span class="h4">Bewerk pagina</span>
+				<div class="btn btn-default btn-xs pull-right" ng-click="goto(page.route)">Bekijk pagina</div>
+	      </div>
+	      <div class="panel-body">
+	        <p class="text-muted">Need support? please fill the fields below.</p>                        
+	          <div class="form-group pull-in clearfix">
+	            <div class="col-sm-6">
+	              <label>Titel</label>
+	              <input type="text" class="form-control" placeholder="Name" ng-model="page.title" required >
+	            </div>
+	            <div class="col-sm-6">
+	              <label>Naam</label>
+	              <input type="text" class="form-control" placeholder="Name" ng-model="page.name" required >
+	            </div>
+				</div>
+	          <div class="form-group pull-in clearfix">
+	            <div class="col-lg-12">
+	              <label>Route</label>
+	              <input type="text" class="form-control" placeholder="Route (bijvoorbeeld: home)" ng-model="page.route">
+	            </div>
+	          </div>
+				<div class="form-group pull-in clearfix">
+					<div class="col-sm-6">
+						<label>Zichtbaar in het menu:</label>
+		            <div>
+			            <label class="i-switch m-t-xs m-r">
+			              <input type="checkbox" ng-model="page.nav">
+			              <i></i>
+							</label>
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<label>Actief:</label>
+		            <div>
+			            <label class="i-switch m-t-xs m-r">
+			              <input type="checkbox" ng-model="page.active">
+			              <i></i>
+							</label>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label>Tekst</label>
+					<textarea class="form-control" rows="6" placeholder="Type your message" ng-model="page.text"></textarea>
+				</div>
+	      </div>
+	      <footer class="panel-footer text-right bg-light lter">
+	        <button type="submit" class="btn btn-success" ng-click="submit()">Opslaan</button>
+	      </footer>
+	    </div>
+	  </form>
+  </div>
+</div>
