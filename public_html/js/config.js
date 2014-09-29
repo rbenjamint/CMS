@@ -75,7 +75,59 @@ app.config(
                 templateUrl: 'tpl/cms_pages_edit.html',
                 controller: 'PageCreateCtrl'
             })
-          	;
+            .state('apps', {
+                abstract: true,
+                url: '/apps',
+                templateUrl: 'tpl/layout.html'
+            })
+            .state('apps.customers', {
+                url: '/customers',
+                templateUrl: 'tpl/apps_contact.html',
+                resolve: {
+                    deps: ['uiLoad',
+                      function( uiLoad ){
+                        return uiLoad.load( ['js/app/contact/contact.js'] );
+                    }]
+                }
+            })
+            .state('apps.notes', {
+                url: '/notes',
+                templateUrl: 'tpl/apps_note.html',
+                resolve: {
+                    deps: ['uiLoad',
+                      function( uiLoad ){
+                        return uiLoad.load( ['js/app/note/note.js',
+                                             'js/libs/moment.min.js'] );
+                    }]
+                }
+            })
+            .state('finance', {
+                abstract: true,
+                url: '/finance',
+                templateUrl: 'tpl/app.html'
+            })
+            .state('finance.quotations', {
+                url: '/offertes',
+                templateUrl: 'tpl/pages/cms_finance_quotations.html'
+            })
+            .state('finance.invoices', {
+                abstract: true,
+                url: '/facturen',
+                templateUrl: 'tpl/layouts/inner.html'
+            })
+            .state('finance.invoices.all', {
+                url: '/all',
+                templateUrl: 'tpl/pages/cms_finance_invoices.html'
+            })
+            .state('finance.invoices.view', {
+                url: '/view/{invoiceId:[0-9]{1,4}}',
+                templateUrl: 'tpl/pages/cms_finance_invoice.html'
+            })
+            .state('finance.invoices.edit', {
+                url: '/edit/{invoiceId:[0-9]{1,4}}',
+                templateUrl: 'tpl/pages/cms_finance_invoice_edit.html'
+            })
+  
 
     }
   ]
