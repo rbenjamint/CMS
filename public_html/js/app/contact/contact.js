@@ -3,11 +3,15 @@ app.controller('ContactCtrl', ['$scope', '$http', '$filter', function($scope, $h
     $scope.items = resp.data.items;
     $scope.item = $filter('orderBy')($scope.items, 'first')[0];
     $scope.item.selected = true;
+    angular.forEach($scope.items, function(value, key) {
+      $scope.groups.push(value.group);
+      console.log(value.group, key);
+    });
+    console.log($scope.groups);
   });
 
   $scope.filter = '';
   $scope.groups = [
-    {name: 'Coworkers'}, 
     {name: 'Family'}, 
     {name: 'Friends'}, 
     {name: 'Partners'}, 
