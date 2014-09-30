@@ -17,6 +17,8 @@ class DatabaseSeeder extends Seeder {
 		$this->call('PageBlocksTableSeeder');
 		$this->call('TemplateTableSeeder');
 		$this->call('TemplateConfigTableSeeder');
+		$this->call('ContactsSeeder');
+		$this->call('ContactsGroupsSeeder');
 	}
 
 }

@@ -1,7 +1,7 @@
-# Webalizer V2.21-02 Incremental Data - 09/24/2014 21:30:55
-2014 9 24 21 30 55
-5446 4726 6 83 11 6 71413702 1187 22 0
-2 65 1099 22 24
+# Webalizer V2.21-02 Incremental Data - 09/30/2014 00:02:17
+2014 9 30 0 2 17
+10693 9905 9 107 12 12 148074301 2133 40 0
+1 42 1946 22 30
 0 0 0 0 0 0
 0 0 0 0 0 0
 0 0 0 0 0 0
@@ -26,14 +26,14 @@
 2782 2218 35335630 3 735 11
 2363 2229 32530408 4 385 8
 301 279 3547664 2 67 4
+73 73 1044108 2 10 3
+57 57 675877 2 13 2
+372 368 3809753 2 116 2
+145 144 1772124 4 31 5
+4558 4496 68737992 3 768 6
+42 41 620745 1 8 1
 0 0 0 0 0 0
-0 0 0 0 0 0
-0 0 0 0 0 0
-0 0 0 0 0 0
-0 0 0 0 0 0
-0 0 0 0 0 0
-0 0 0 0 0 0
-213 201 2432772 67
+255 242 3053517 75
 0 0 0 0
 0 0 0 0
 0 0 0 0
@@ -43,24 +43,24 @@
 0 0 0 0
 158 140 1816671 32
 92 82 1041313 24
-14 14 9983 14
+48 48 491992 18
 0 0 0 0
-0 0 0 0
-0 0 0 0
-34 34 481746 4
-0 0 0 0
-356 108 3690617 142
+68 67 909156 13
+2 2 2867 2
+212 212 2405148 41
+183 178 1687733 78
+429 181 4734731 152
 67 64 698796 18
-276 276 3858993 55
-248 94 1573289 179
-699 650 9119045 114
-702 650 10228431 151
-1311 1178 17557781 209
-1276 1235 18904265 178
+387 378 5215852 76
+520 357 5201127 229
+791 742 10410827 130
+1828 1775 27767815 308
+2378 2232 33877064 391
+3275 3205 48759692 546
 0
 0
 0
-4726
+9905
 0
 0
 0
@@ -71,11 +71,11 @@
 7
 221
 0
-263
+297
 0
 0
 0
-0
+3
 0
 2
 0
@@ -92,7 +92,7 @@
 0
 0
 0
-227
+258
 0
 0
 0
@@ -100,237 +100,305 @@
 0
 # -urls- 
 /css/font-awesome.min.css
-0 253 0 1360380 0 0
+0 378 0 2032495 0 0
+/tpl/pages/cms_finance_invoice.html
+0 1 0 1339 0 0
 /img/a5.jpg
-0 24 0 27157 0 0
+0 34 0 49088 0 0
 /
-0 99 0 1239819 6 3
+0 110 0 1257130 13 8
+/js/app/note/note.js
+0 1 0 782 0 0
 /js/login.js
-0 76 0 196850 0 0
+0 200 0 389469 0 0
 /fonts/fontawesome-webfont.woff
-0 140 0 9206989 0 0
+0 261 0 17164441 0 0
 /img/a4.jpg
-0 24 0 27149 0 0
+0 34 0 49079 0 0
 /test/info
 0 142 0 3376833 0 0
+/cms/api/contacts/rest
+0 128 0 116053 0 0
 /tpl/blocks/nav.html
-0 51 0 35765 0 0
+0 71 0 51283 0 0
 /js/filters.js
-0 72 0 59104 0 0
+0 196 0 129123 0 0
 /js/libs/angular/angular.js
-0 73 0 14218510 0 0
+0 198 0 38343590 0 0
 /test/home
 0 4 0 2858 0 0
 /js/libs/underscore.js
-0 76 0 939286 0 0
+0 201 0 2444962 0 0
 /contact
 0 2 0 2897 0 0
 /img/a3.jpg
-0 37 0 29304 0 0
+0 50 0 51731 0 0
 /test/l10n/en.json
 0 2 0 1427 0 0
 /js/directives.js
-0 72 0 207985 0 0
+0 196 0 519601 0 0
 /js/jquery/footable/footable.all.min.js
-0 15 0 132705 0 0
+0 21 0 185790 0 0
+/cms/api/contacts/create
+0 6 0 4336 0 0
 /fonts/Simple-Line-Icons.woff
-0 33 0 1958254 0 0
+0 151 0 8960506 0 0
 /fonts/glyphicons-halflings-regular.woff
-0 37 0 867403 0 0
+0 53 0 1242497 0 0
 /img/a2.jpg
-0 37 0 29303 0 0
+0 49 0 51563 0 0
 /js/services/pages.js
-0 17 0 11285 0 0
+0 23 0 15269 0 0
 /hoi
 0 14 0 9983 0 1
+/tpl/layout.html
+0 110 0 69968 0 0
+/tpl/pages/cms_finance_invoices.html
+0 2 0 2622 0 0
 /img/c4.jpg
-0 79 0 301111 0 0
+0 83 0 445735 0 0
 /cms/api/pages/rest/1
-0 13 0 10733 0 0
+0 14 0 11575 0 0
 /cms/api/pages/rest/2
 0 2 0 1655 0 0
 /js/jquery/jquery.min.js
-0 71 0 2270598 0 0
+0 196 0 6352780 0 0
 /test/img/c4.jpg
 0 1 0 711 0 0
+/js/libs/moment.min.js
+0 1 0 11478 0 0
 /img/a1.jpg
-0 24 0 27148 0 0
+0 34 0 49075 0 0
 /cms/api/blocks/pbrest
 0 10 0 25742 1 1
 /tpl/page_signin.html
-0 15 0 12768 0 0
+0 29 0 24689 0 0
+/cms/api/contacts/groups
+0 54 0 40827 0 0
 /cms/api/pages/rest
-0 19 0 17306 1 1
-/tpl/app.html
-0 66 0 83966 0 0
+0 27 0 24667 1 1
+/img/a0.jpg
+0 3 0 6288 0 0
 /cms/auth/rest
-0 76 0 120334 1 0
+0 206 0 1006626 3 4
+/tpl/app.html
+0 80 0 101779 0 0
 /js/jquery/footable/fonts/footable.svg
-0 15 0 48256 0 0
+0 21 0 67560 0 0
+/js/app/contact/contacts.json
+0 10 0 9059 0 0
 /js/angular/angular-translate.js
-0 72 0 566820 0 0
+0 197 0 1459421 0 0
 /js/services.js
-0 71 0 37251 0 0
+0 195 0 96029 0 0
 /css/bootstrap.css
-0 253 0 5069466 0 0
+0 377 0 7554349 0 0
 /fonts/sourcesanspro/sourcesanspro-bold.woff
-0 149 0 3788364 0 0
+0 271 0 6906267 0 0
 /tpl/cms_pages_edit.html
-0 8 0 8144 0 0
+0 9 0 9162 0 0
 /test/tpl/app_dashboard_v1.html
 0 2 0 1428 0 0
 /css/animate.css
-0 253 0 423857 0 0
+0 377 0 637503 0 0
 /error404
 0 1 0 883 0 0
+/tpl/cms_pages_active.html
+0 7 0 7035 0 0
 /js/controllers.js
-0 77 0 199442 0 0
+0 202 0 492104 0 0
+/tpl/apps_note.html
+0 1 0 1237 0 0
 /js/angular/ui-jq.js
-0 72 0 109395 0 0
+0 197 0 318582 0 0
 /js/config.js
-0 76 0 104432 0 0
+0 201 0 316374 0 0
+/js/app/contact/contact.js
+0 109 0 115844 0 0
 /css/font.css
-0 253 0 135788 0 0
+0 377 0 201778 0 0
 /favicon.ico
-0 44 0 8652 0 0
+0 57 0 12076 0 0
 /test/js/jquery/jquery.min.js
 0 2 0 1418 0 0
 /fonts/sourcesanspro/sourcesanspro.woff
-0 227 0 5893900 0 0
+0 351 0 9104760 0 0
 /js/app.js
-0 72 0 85051 0 0
+0 197 0 246178 0 0
+/js/services/contacts.js
+0 67 0 40069 0 0
 /fonts/sourcesanspro/sourcesanspro-light.woff
-0 69 0 1764148 0 0
+0 168 0 4278411 0 0
 /l10n/en.json
-0 68 0 71563 0 0
+0 194 0 206141 0 0
 /style.css
 0 4 0 2846 0 0
 /css/app.css
-0 253 0 3346899 0 0
+0 377 0 4975031 0 0
 /js/angular/ui-load.js
-0 72 0 75968 0 0
+0 197 0 235624 0 0
 /tpl/cms_pages.html
-0 16 0 15886 0 0
+0 21 0 20850 0 0
 /test
 0 1 0 720 0 0
 /tpl/app_dashboard_v1.html
-0 32 0 93559 0 0
+0 42 0 122796 0 0
+/cms/api/contacts/saveGroup
+0 2 0 1426 0 0
 /tpl/blocks/header.html
-0 37 0 42441 0 0
+0 51 0 58503 0 0
 /js/libs/angular/angular-animate.js
-0 72 0 1155844 0 0
+0 198 0 3222459 0 0
 /info
 0 25 0 30443 0 0
 /js/angular/ui-validate.js
-0 72 0 115254 0 0
+0 197 0 317989 0 0
+/tpl/layouts/inner.html
+0 2 2 491 0 0
 /js/jquery/charts/easypiechart/jquery.easy-pie-chart.js
-0 24 0 58609 0 0
+0 34 0 83032 0 0
+/tpl/apps_contact.html
+0 110 0 208533 0 2
 /tpl/page_invoice.html
-0 21 0 26958 0 1
+0 24 0 30840 0 3
+/cms/api/contacts
+0 2 0 1432 0 0
+/tpl/pages/cms_finance_quotations.html
+0 1 0 1467 0 0
 /js/libs/angular/ui-bootstrap-tpls.js
-0 72 0 2205815 0 0
+0 197 0 6153799 0 0
+/cms/api/contacts/save
+0 28 0 21657 0 0
 /js/libs/angular/ngStorage.js
-0 72 0 118126 0 0
+0 197 0 301088 0 0
 /img/a8.jpg
-0 24 0 27157 0 0
+0 34 0 49085 0 0
 /tpl/blocks/page_footer.html
-0 15 0 6360 0 1
+0 28 0 11875 0 2
 /cms/auth/login
-0 13 0 103034 0 0
+0 25 0 198131 0 0
 /cms
-0 85 0 122690 6 0
+0 218 0 315186 15 1
 /js/libs/angular/angular-cookies.js
-0 72 0 236053 0 0
+0 198 0 527369 0 0
+/cms/api/pages/rest/nav/1
+0 36 0 32023 0 0
 /tpl/blocks/aside.html
-0 36 0 16488 0 0
+0 50 0 22902 0 0
 /img/a7.jpg
-0 24 0 27151 0 0
+0 34 0 49080 0 0
 /test/tpl/app.html
 0 2 0 1424 0 0
 /js/libs/angular/ocLazyLoad.js
-0 72 0 629215 0 0
+0 197 0 1599878 0 0
 /js/jquery/footable/fonts/footable.woff
-0 9 0 38493 0 0
+0 12 0 51326 0 0
+/js/app/note/notes.json
+0 1 0 524 0 0
 /js/libs/angular/angular-ui-router.js
-0 72 0 2419897 0 0
+0 198 0 6719436 0 0
 /tpl/pages.html
-0 16 0 11055 1 0
+0 24 0 16581 1 0
 /js/jquery/footable/footable.core.css
-0 15 0 19560 0 0
+0 21 0 27385 0 0
 /tpl/empty.html
-0 18 0 8205 0 1
+0 22 0 10029 0 1
 /img/a6.jpg
-0 24 0 27160 0 0
+0 34 0 49089 0 0
 /css/simple-line-icons.css
-0 253 0 670094 0 0
+0 377 0 999722 0 0
+/cms/api/contacts/group
+0 6 0 4839 0 0
 /cms/api/pages/save
 0 6 0 5147 0 1
+/cms/auth/logout
+0 1 0 1038 0 0
 # End Of Table - urls
 # -sites- (monthly)
 66.249.81.109
-0 2 2 1852 1 1411501745
+0 10 10 9301 5 1412016682
 /
 95.96.90.204
-0 4615 4174 62446804 8 1411594255
-/cms
+0 9278 8774 132638900 16 1412035337
+/cms/api/contacts/save
 84.241.211.247
 0 124 106 1335139 1 1411550282
 /tpl/empty.html
+218.88.8.174
+0 34 34 482015 1 1411921932
+/tpl/blocks/page_footer.html
+84.177.207.13
+0 53 53 612618 1 1411946780
+/cms/auth/login
 84.241.209.59
 0 98 90 1154531 1 1411461321
 /cms/api/pages/rest/1
+218.88.9.229
+0 360 356 3610952 1 1411832746
+/cms/api/pages/rest/nav/1
 84.241.211.111
 0 108 108 1225920 1 1411409795
 /cms/api/pages/save
 81.207.227.175
-0 499 246 5249456 10 1411490799
-/cms/auth/rest
+0 628 374 7004925 13 1411997334
+/
 # End Of Table - sites (monthly)
 # -sites- (daily)
 95.96.90.204
-0 177 173 2212525 3 1411594255
-/cms
-84.241.211.247
-0 124 106 1335139 1 1411550282
-/tpl/empty.html
+0 42 41 620745 1 1412035337
+/cms/api/contacts/save
 # End Of Table - sites (daily)
 # -referrers- 
 - (Direct Request)
-0 624
+0 819
 http://cmr.robintimman.nl/js/jquery/footable/footable.core.css
-0 4
+0 6
+http://themeforest.net/item/angulr-bootstrap-admin-web-app-with-angularjs/8437259/comments
+0 5
 http://cmr.robintimman.nl/contact
 0 1
 http://cmr.robintimman.nl/css/simple-line-icons.css
-0 6
+0 29
 http://cmr.robintimman.nl/cms
-0 3179
+0 8069
 http://cmr.robintimman.nl/test/info
 0 873
 http://cmr.robintimman.nl/css/font-awesome.min.css
-0 13
+0 38
 http://cmr.robintimman.nl/css/font.css
-0 35
+0 103
 http://cmr.robintimman.nl/
-0 614
+0 646
 http://cmr.robintimman.nl/info
 0 89
 http://cmr.robintimman.nl/css/bootstrap.css
-0 8
+0 15
 # End Of Table - referrers
 # -agents- 
 Mozilla/5.0 (Windows NT 6.1; rv:6.0) Gecko/20110814 Firefox/6.0 Google favicon
-0 2
+0 10
 Mozilla/5.0 (iPad; CPU OS 7_1_2 like Mac OS X) AppleWebKit/537.51.2 (KHTML, like Gecko) Version/7.0 Mobile/11D257 Safari/9537
-0 133
+0 167
+Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+0 95
+Mozilla/5.0 (Windows NT 6.3; WOW64; rv:32.0) Gecko/20100101 Firefox/32.0
+0 53
 Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.120 Safari/537.36
 0 4075
 Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.122 Safari/537.36
 0 374
+Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.120 Safari/537.36
+0 4383
 Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
 0 58
+Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.125 Safari/537.36
+0 101
+Mozilla/5.0 (Linux; Android 4.4.4; Nexus 5 Build/KTU84P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.117 Mobile S
+0 74
 Mozilla/5.0 (iPhone; CPU iPhone OS 8_0 like Mac OS X) AppleWebKit/600.1.4 (KHTML, like Gecko) Version/8.0 Mobile/12A365 Safar
-0 804
+0 1248
+Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:28.0) Gecko/20100101 Firefox/28.0
+0 55
 # End Of Table - agents
 # -search strings- 
 # End Of Table - search strings

@@ -86,7 +86,7 @@ app.config(
                 resolve: {
                     deps: ['uiLoad',
                       function( uiLoad ){
-                        return uiLoad.load( ['js/app/contact/contact.js'] );
+                        return uiLoad.load( ['js/app/contact/contact.js','js/services/contacts.js'] );
                     }]
                 }
             })

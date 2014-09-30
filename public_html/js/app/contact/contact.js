@@ -1,18 +1,17 @@
-app.controller('ContactCtrl', ['$scope', '$http', '$filter', function($scope, $http, $filter) {
-  $http.get('js/app/contact/contacts.json').then(function (resp) {
-    $scope.items = resp.data.items;
+app.controller('ContactCtrl', ['$scope', '$http', '$filter', 'contacts', function($scope, $http, $filter, contacts) {
+  
+  contacts.all().then(function(contacts){
+    $scope.items = contacts;
     $scope.item = $filter('orderBy')($scope.items, 'first')[0];
     $scope.item.selected = true;
+    console.log($scope.items);
   });
-
+  
+  contacts.groups().then(function(contacts){
+  	$scope.groups = contacts;
+  });
+  
   $scope.filter = '';
-  $scope.groups = [
-    {name: 'Coworkers'}, 
-    {name: 'Family'}, 
-    {name: 'Friends'}, 
-    {name: 'Partners'}, 
-    {name: 'Group'}
-  ];
 
   $scope.createGroup = function(){
     var group = {name: 'New Group'};
@@ -68,9 +67,12 @@ app.controller('ContactCtrl', ['$scope', '$http', '$filter', function($scope, $h
       group: 'Friends',
       avatar:'img/a0.jpg'
     };
-    $scope.items.push(item);
-    $scope.selectItem(item);
-    $scope.item.editing = true;
+	contacts.add(item).then(function(){
+		console.log('gelukt!');
+	    $scope.items.push(item);
+	    $scope.selectItem(item);
+	    $scope.item.editing = true;
+	});
   };
 
   $scope.editItem = function(item){
@@ -79,8 +81,20 @@ app.controller('ContactCtrl', ['$scope', '$http', '$filter', function($scope, $h
     }
   };
 
+  $scope.doneEditingGroup = function(item){
+		console.log('hoi: group');
+		contacts.saveGroup(item).then(function(){
+			console.log('gelukt!');
+			item.editing = false;
+		});
+  };
   $scope.doneEditing = function(item){
-    item.editing = false;
+		console.log('hoi: item');
+		contacts.save(item).then(function(){
+			console.log('gelukt!');
+			item.editing = false;
+		});
+		return;
   };
 
 }]);

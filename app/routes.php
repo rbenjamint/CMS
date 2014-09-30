@@ -27,7 +27,7 @@ Route::group(array('prefix' => 'cms'), function(){
   Route::get('auth/status', 'AuthController@status');
   Route::get('auth/rest','AuthController@rest');
 
-  Route::group(array('prefix' => 'api'), function(){
+  Route::group(array('before' => 'auth', 'prefix' => 'api'), function(){
   	
 		// pages api
 		Route::group(array('prefix' => 'pages'), function(){
@@ -48,6 +48,16 @@ Route::group(array('prefix' => 'cms'), function(){
       Route::get('rest','BlocksController@rest');
       Route::get('pbrest','BlocksController@pbrest');
       Route::get('pbrest/{id}','BlocksController@pbrestId')->where('id', '[0-9]+');
+
+    });
+  
+    Route::group(array('prefix' => 'contacts'), function(){
+      
+      Route::get('rest','ContactsController@rest');
+      Route::get('groups','ContactsController@groups');
+      Route::post('save','ContactsController@save');
+      Route::post('group','ContactsController@saveGroup');
+      Route::post('create','ContactsController@newContact');
 
     });
   });
