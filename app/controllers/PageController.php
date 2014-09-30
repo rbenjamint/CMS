@@ -45,8 +45,15 @@ class PageController extends BaseController {
   
   public function restId($id) {
     $page = Page::find($id);
-	 
-	 $page = $this->resolvePage($page);
+    foreach ($page->blocks as $block) {
+      $block->settings = json_decode($block->settings);
+      $block->block;
+      $block->block->settings_template = json_decode($block->block->settings_template);
+      if(isset($block->block->settings_template->options)){
+        $block->block->settings_template->options = json_decode($block->block->settings_template->options);
+      }
+    }
+    $page = $this->resolvePage($page);
 	 
     return Response::json($page);
   }
@@ -56,6 +63,13 @@ class PageController extends BaseController {
   }
 
   public function save() {
+    return Response::json(array('page' => Input::all()));
+    $blocks = Input::json('blocks');
+    $blocks2 = Input::json('blocks');
+    foreach ($blocks2 as $key => $value) {
+      $value = 'hoi';
+    }
+   return Response::json(array('page' => $blocks, 'new' => $blocks2));
   	$id	= Input::json('id');
 	$page = Page::find($id);
 	$page->title	= Input::json('title');

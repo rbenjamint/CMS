@@ -19,6 +19,7 @@ class CreateBlocksTable extends Migration {
 			$table->string('template');
 			$table->boolean('settings')->default(0);
 			$table->boolean('locked')->default(0);
+			$table->longText('settings_template');
 		});
 	}
 
